@@ -10,27 +10,63 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\UserInterface">
+      <UniqueIdentifier>{516ee7ba-a9b4-42de-b2ed-90376323d587}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\UserInterface\Scenes">
+      <UniqueIdentifier>{8ef11866-a860-4d74-a843-806f66e50643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Infrastructure">
+      <UniqueIdentifier>{ba6c2bdc-1412-4a80-a1cd-287c462bb432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ThirdParty">
+      <UniqueIdentifier>{8ee2ed0f-07ca-43e1-8ace-423ea0297afc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ThirdParty\Cocos2d-x">
+      <UniqueIdentifier>{90e71eac-ce17-4a0c-b999-ddca001ad12d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Logging">
+      <UniqueIdentifier>{aae7c09b-fe16-486a-8bd7-fdf148b24def}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>Classes</Filter>
+    <ClCompile Include="..\Classes\UserInterface\Scenes\HelloWorldScene.cpp">
+      <Filter>Classes\UserInterface\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>Classes</Filter>
+    <ClCompile Include="..\Classes\UserInterface\Scenes\EthnicityListScene.cpp">
+      <Filter>Classes\UserInterface\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logging\Assertion.cpp">
+      <Filter>Classes\Logging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Infrastructure\AppDelegate.cpp">
+      <Filter>Classes\Infrastructure</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\Classes\UserInterface\Scenes\EthnicityListScene.h">
+      <Filter>Classes\UserInterface\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\Classes\UserInterface\Scenes\HelloWorldScene.h">
+      <Filter>Classes\UserInterface\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThirdParty\Cocos2d-x\Cocos2d-x.h">
+      <Filter>Classes\ThirdParty\Cocos2d-x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logging\Assertion.h">
+      <Filter>Classes\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logging\Log.h">
+      <Filter>Classes\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Infrastructure\AppDelegate.h">
+      <Filter>Classes\Infrastructure</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

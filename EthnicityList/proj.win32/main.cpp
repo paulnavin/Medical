@@ -1,6 +1,6 @@
 #include "main.h"
-#include "AppDelegate.h"
-#include "cocos2d.h"
+#include <Infrastructure/AppDelegate.h>
+#include <ThirdParty/Cocos2d-x/Cocos2d-x.h>
 
 USING_NS_CC;
 

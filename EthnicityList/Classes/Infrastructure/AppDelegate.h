@@ -1,7 +1,7 @@
 #ifndef  _APP_DELEGATE_H_
 #define  _APP_DELEGATE_H_
 
-#include "cocos2d.h"
+#include <ThirdParty/Cocos2d-x/Cocos2d-x.h>
 
 /**
 @brief    The cocos2d Application.
