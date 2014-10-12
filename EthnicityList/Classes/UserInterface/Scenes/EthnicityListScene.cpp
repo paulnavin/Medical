@@ -1,5 +1,6 @@
 #include <UserInterface/Scenes/EthnicityListScene.h>
 
+#include <Logging/Log.h>
 USING_NS_CC;
 
 Scene* EthnicityListScene::createScene()
@@ -53,7 +54,7 @@ bool EthnicityListScene::init()
 
     // add a label shows "Hello World"
     // create and initialize a label
-    
+    //
     auto label = LabelTTF::create("Hello World", "Arial", 24);
     
     // position the label on the center of the screen
@@ -71,7 +72,36 @@ bool EthnicityListScene::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
+
+    cocos2d::ui::ListView* listView = cocos2d::ui::ListView::create();
+    listView->setDirection(ui::ScrollView::Direction::VERTICAL);
+    listView->setTouchEnabled(true);
+    listView->setBounceEnabled(true);
+    listView->setBackGroundImage("HelloWorld.png");
+    listView->setBackGroundImageScale9Enabled(true);
+    listView->setSize(visibleSize);
+    listView->setContentSize(visibleSize);
+    listView->addEventListener((ui::ListView::ccListViewCallback)CC_CALLBACK_2(EthnicityListScene::selectedItemEvent, this));
+    this->addChild(listView);
     
+
+
+    // add custom item
+    for (int i = 0; i < 10; ++i)
+    {
+      cocos2d::ui::Button* custom_button = cocos2d::ui::Button::create("CloseNormal.png", "CloseSelected.png");
+      custom_button->setName("Title Button");
+      custom_button->setScale9Enabled(true);
+      custom_button->setContentSize(Size(100, 50));
+
+      cocos2d::ui::Layout* custom_item = cocos2d::ui::Layout::create();
+      custom_item->setContentSize(custom_button->getContentSize());
+      custom_button->setPosition(Vec2(custom_item->getContentSize().width / 2.0f, custom_item->getContentSize().height / 2.0f));
+      custom_item->addChild(custom_button);
+
+      listView->pushBackCustomItem(custom_item);
+    }
+
     return true;
 }
 
@@ -88,4 +118,9 @@ void EthnicityListScene::menuCloseCallback(Ref* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+void EthnicityListScene::selectedItemEvent(cocos2d::Ref* node, cocos2d::ui::ListView::EventType eventType)
+{
+  LOGD("Eat this!");
 }

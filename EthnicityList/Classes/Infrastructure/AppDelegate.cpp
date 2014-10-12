@@ -1,5 +1,6 @@
 #include <Infrastructure/AppDelegate.h>
 #include <UserInterface/Scenes/HelloWorldScene.h>
+#include <UserInterface/Scenes/EthnicityListScene.h>
 
 USING_NS_CC;
 
@@ -27,7 +28,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = EthnicityListScene::createScene();
 
     // run
     director->runWithScene(scene);

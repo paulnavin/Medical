@@ -14,6 +14,9 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
+
+    // Callback for when a list item is touched.
+    void selectedItemEvent(cocos2d::Ref* node, cocos2d::ui::ListView::EventType eventType);
     
     // implement the "static create()" method manually
     CREATE_FUNC(EthnicityListScene);

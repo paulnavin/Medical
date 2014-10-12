@@ -51,7 +51,9 @@ EthnicityList/proj.android/obj/
 EthnicityList/bin/
 EthnicityList/linux-build/
 EthnicityList/cocos2d/cocos/2d/Debug.win32/
+EthnicityList/cocos2d/cocos/ui/proj.win32/Debug.win32/
 EthnicityList/cocos2d/cocos/audio/proj.win32/Debug.win32/
+EthnicityList/cocos2d/extensions/proj.win32/Debug.win32/
 EthnicityList/cocos2d/external/chipmunk/proj.win32/Debug.win32/
 EthnicityList/proj.win32/Debug.win32/
 EthnicityList/proj.win32/EthnicityList.opensdf

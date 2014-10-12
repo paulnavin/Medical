@@ -21,6 +21,7 @@
 #include <cocos2d.h>
 #include <GUI/CCControlExtension/CCScale9Sprite.h>
 #include <cocos2d/cocos/ui/UIButton.h>
+#include <cocos2d/cocos/ui/UIListView.h>
 #include <cocos2d/cocos/ui/UISlider.h>
 #include <cocos2d/cocos/ui/UIWidget.h>
 
