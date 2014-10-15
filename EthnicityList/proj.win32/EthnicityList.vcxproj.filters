@@ -28,6 +28,9 @@
     <Filter Include="Classes\Logging">
       <UniqueIdentifier>{aae7c09b-fe16-486a-8bd7-fdf148b24def}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\UserInterface\Widgets">
+      <UniqueIdentifier>{e482a481-dd79-4996-9cf6-8ceb52abaa15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,6 +47,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Infrastructure\AppDelegate.cpp">
       <Filter>Classes\Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UserInterface\Widgets\FilteringListStuffer.cpp">
+      <Filter>Classes\UserInterface\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UserInterface\Widgets\FilteringList.cpp">
+      <Filter>Classes\UserInterface\Widgets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Infrastructure\AppDelegate.h">
       <Filter>Classes\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UserInterface\Widgets\FilteringListStuffer.h">
+      <Filter>Classes\UserInterface\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UserInterface\Widgets\FilteringList.h">
+      <Filter>Classes\UserInterface\Widgets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

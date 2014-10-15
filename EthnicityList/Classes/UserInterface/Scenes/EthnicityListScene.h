@@ -3,6 +3,9 @@
 
 #include <ThirdParty/Cocos2d-x/Cocos2d-x.h>
 
+class FilteringList;
+class FilteringListStuffer;
+
 class EthnicityListScene : public cocos2d::Layer
 {
 public:
@@ -20,6 +23,10 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(EthnicityListScene);
+
+private:
+  FilteringList* filteringList_;
+  FilteringListStuffer* listStuffer_;
 };
 
 #endif // __ETHNICITY_LIST_SCENE_H__

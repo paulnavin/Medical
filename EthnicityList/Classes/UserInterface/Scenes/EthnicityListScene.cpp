@@ -1,6 +1,9 @@
 #include <UserInterface/Scenes/EthnicityListScene.h>
 
 #include <Logging/Log.h>
+#include <UserInterface/Widgets/FilteringList.h>
+#include <UserInterface/Widgets/FilteringListStuffer.h>
+
 USING_NS_CC;
 
 Scene* EthnicityListScene::createScene()
@@ -41,7 +44,7 @@ bool EthnicityListScene::init()
                                            "CloseSelected.png",
                                            CC_CALLBACK_1(EthnicityListScene::menuCloseCallback, this));
     
-	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
+	  closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
                                 origin.y + closeItem->getContentSize().height/2));
 
     // create menu, it's an autorelease object
@@ -73,35 +76,12 @@ bool EthnicityListScene::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
 
-    cocos2d::ui::ListView* listView = cocos2d::ui::ListView::create();
-    listView->setDirection(ui::ScrollView::Direction::VERTICAL);
-    listView->setTouchEnabled(true);
-    listView->setBounceEnabled(true);
-    listView->setBackGroundImage("HelloWorld.png");
-    listView->setBackGroundImageScale9Enabled(true);
-    listView->setSize(visibleSize);
-    listView->setContentSize(visibleSize);
-    listView->addEventListener((ui::ListView::ccListViewCallback)CC_CALLBACK_2(EthnicityListScene::selectedItemEvent, this));
-    this->addChild(listView);
-    
-
-
-    // add custom item
-    for (int i = 0; i < 10; ++i)
-    {
-      cocos2d::ui::Button* custom_button = cocos2d::ui::Button::create("CloseNormal.png", "CloseSelected.png");
-      custom_button->setName("Title Button");
-      custom_button->setScale9Enabled(true);
-      custom_button->setContentSize(Size(100, 50));
-
-      cocos2d::ui::Layout* custom_item = cocos2d::ui::Layout::create();
-      custom_item->setContentSize(custom_button->getContentSize());
-      custom_button->setPosition(Vec2(custom_item->getContentSize().width / 2.0f, custom_item->getContentSize().height / 2.0f));
-      custom_item->addChild(custom_button);
-
-      listView->pushBackCustomItem(custom_item);
-    }
-
+    listStuffer_ = new FilteringListStuffer();
+    cocos2d::Rect listPosition;
+    listPosition.size = visibleSize;
+    filteringList_ = new FilteringList(listPosition, *listStuffer_);
+    filteringList_->Initialise();
+    filteringList_->AddToRenderTree(this);
     return true;
 }
 
@@ -114,6 +94,9 @@ void EthnicityListScene::menuCloseCallback(Ref* pSender)
 #endif
 
     Director::getInstance()->end();
+
+    delete listStuffer_;
+    delete filteringList_;
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);

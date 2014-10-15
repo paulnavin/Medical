@@ -139,6 +139,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Logging\Assertion.cpp" />
     <ClCompile Include="..\Classes\UserInterface\Scenes\EthnicityListScene.cpp" />
     <ClCompile Include="..\Classes\UserInterface\Scenes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\UserInterface\Widgets\FilteringList.cpp" />
+    <ClCompile Include="..\Classes\UserInterface\Widgets\FilteringListStuffer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +150,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ThirdParty\Cocos2d-x\Cocos2d-x.h" />
     <ClInclude Include="..\Classes\UserInterface\Scenes\EthnicityListScene.h" />
     <ClInclude Include="..\Classes\UserInterface\Scenes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\UserInterface\Widgets\FilteringList.h" />
+    <ClInclude Include="..\Classes\UserInterface\Widgets\FilteringListStuffer.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
