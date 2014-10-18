@@ -23,11 +23,12 @@ void FilteringList::Initialise()
   list_->setDirection(cocos2d::ui::ScrollView::Direction::VERTICAL);
   list_->setTouchEnabled(true);
   list_->setBounceEnabled(true);
-  list_->setBackGroundImage("HelloWorld.png");
+  list_->setBackGroundImage("background.png");
   list_->setBackGroundImageScale9Enabled(true);
   list_->setContentSize(boundingBox_.size);
   //listView->addEventListener((ui::ListView::ccListViewCallback)CC_CALLBACK_2(EthnicityListScene::selectedItemEvent, this));
   list_->addEventListener((cocos2d::ui::ScrollView::ccScrollViewCallback)CC_CALLBACK_2(FilteringList::ScrollHitTheBottom, this));
+  list_->addEventListener((cocos2d::ui::ListView::ccListViewCallback)CC_CALLBACK_2(FilteringList::ListItemSelected, this));
 
   dataSource_.StuffList(*list_, 15);
 }
@@ -55,4 +56,9 @@ void FilteringList::ScrollHitTheBottom(cocos2d::Ref* node, cocos2d::ui::ScrollVi
     LOGD("%d : Scroll to top!!", systemTime.wMilliseconds);
   }
   // {SYSTEMTIME systemTime; GetSystemTime(&systemTime); char output[320]; int length = snprintf(output, 300, __VA_ARGS__); output[length] = '\n'; output[length + 1] = '\0'; OutputDebugStringA(output); }
+}
+
+void FilteringList::ListItemSelected(cocos2d::Ref* node, cocos2d::ui::ListView::EventType eventType)
+{
+  LOGD("%d : ListItemSelected", eventType);
 }

@@ -18,8 +18,12 @@ public:
   void Initialise();
   void AddToRenderTree(cocos2d::Node* parent);
 
+public:
+  //void SetHeader();
+
 protected:
   void ScrollHitTheBottom(cocos2d::Ref* node, cocos2d::ui::ScrollView::EventType eventType);
+  void ListItemSelected(cocos2d::Ref* node, cocos2d::ui::ListView::EventType eventType);
 
 private:
   const cocos2d::Rect&        boundingBox_;
